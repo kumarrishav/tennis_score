@@ -8,13 +8,18 @@ class Player
     int set;
 }
 class ScoreBoard{
-    Player A=new Player();
-    Player B=new Player();
+    Player A;
+    Player B;
 	static void setCheck(){
 	    if(A.game>=6 && A.game>=(B.game+2)){
 	        A.set++;
 	        A.game=0;
 	        B.game=0;
+	    }
+		if(B.game>=6 && B.game>=(A.game+2)){
+	        B.set++;
+	        B.game=0;
+	        A.game=0;
 	    }
 	}
 }
@@ -23,6 +28,6 @@ class TennisMain{
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
         ScoreBoard SB=new ScoreBoard();
         String s=br.readLine();
-        score(s);
+        SB.score(s);
     }
 }
