@@ -8,10 +8,10 @@ class Player
     int set;
 }
 class ScoreBoard{
-	final int MINSCORE=6;
-	final int MINDIFF=2
-    Player A;
-    Player B;
+	final static int MINSCORE=6;
+	final static int MINDIFF=2;
+    static Player A;
+    static Player B;
 	static void setCheck(){
 	    if(A.game>=MINSCORE && A.game>=(B.game+MINDIFF)){
 	        A.set++;
@@ -24,13 +24,13 @@ class ScoreBoard{
 	        A.game=0;
 	    }
 	}
-	public static void Score(String str){
-             GameCheck(String str);
+	public void score(String str){
+             gameCheck(str);
              
        }
        public static void gameCheck(String str){
              for(int i=0;i<str.length();i++){
-				char ch=s.charAt(i);
+				char ch=str.charAt(i);
                     if(ch=='a')
                            A.point++;
                     else
@@ -40,11 +40,9 @@ class ScoreBoard{
                            if(Math.abs(A.point-B.point)>=2){
                                  if(A.point>B.point){
                                         A.game++;
-										setCheck();
 									}
                                  else{
                                         B.game++;
-										setcheck();
 									}
                                  A.point=0;
                                  B.point=0;
@@ -56,8 +54,31 @@ class ScoreBoard{
                                  }
                            }
                     }
+				setCheck();
+				display();
              }
        }
+	   public static void display(){
+             System.out.print("Player A "+ A.set+"  "+A.game+"  ");
+             if(A.point==1)
+                    System.out.println(15);
+             else if(A.point==2)
+                    System.out.println(30);
+             else if(A.point==3)
+                    System.out.println(40);
+             else if(A.point==4)
+                    System.out.println("AD");
+             System.out.print("Player B "+B.set+"  "+B.game+"  ");
+             if(B.point==1)
+                    System.out.println(15);
+             else if(B.point==2)
+                    System.out.println(30);
+             else if(B.point==3)
+                    System.out.println(40);
+             else if(B.point==4)
+                    System.out.println("AD");
+       }
+
 
 }
 class TennisMain{
