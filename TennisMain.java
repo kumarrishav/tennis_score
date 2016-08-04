@@ -63,8 +63,9 @@ class ScoreBoard{
              }
        }
 	   public static void display(){
-             System.out.print("Player A "+ A.set+"  "+A.game+"  \n");
-             if(A.point==1)
+             System.out.print("Player A "+ A.set+"  "+A.game+"  ");
+             
+			 if(A.point==1)
                     System.out.println(15);
              else if(A.point==2)
                     System.out.println(30);
@@ -72,7 +73,9 @@ class ScoreBoard{
                     System.out.println(40);
              else if(A.point==4)
                     System.out.println("AD");
-             System.out.print("Player B "+B.set+"  "+B.game+"  \n");
+			else 
+					System.out.println(0);
+             System.out.print("Player B "+B.set+"  "+B.game+" ");
              if(B.point==1)
                     System.out.println(15);
              else if(B.point==2)
@@ -81,6 +84,10 @@ class ScoreBoard{
                     System.out.println(40);
              else if(B.point==4)
                     System.out.println("AD");
+			else 
+					System.out.println(0);
+			
+			System.out.println();
        }
 
 
