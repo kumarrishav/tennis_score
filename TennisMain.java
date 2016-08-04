@@ -12,6 +12,10 @@ class ScoreBoard{
 	final static int MINDIFF=2;
     static Player A;
     static Player B;
+	ScoreBoard(){
+	A=new Player();
+	B=new Player();
+	}
 	static void setCheck(){
 	    if(A.game>=MINSCORE && A.game>=(B.game+MINDIFF)){
 	        A.set++;
@@ -59,7 +63,7 @@ class ScoreBoard{
              }
        }
 	   public static void display(){
-             System.out.print("Player A "+ A.set+"  "+A.game+"  ");
+             System.out.print("Player A "+ A.set+"  "+A.game+"  \n");
              if(A.point==1)
                     System.out.println(15);
              else if(A.point==2)
@@ -68,7 +72,7 @@ class ScoreBoard{
                     System.out.println(40);
              else if(A.point==4)
                     System.out.println("AD");
-             System.out.print("Player B "+B.set+"  "+B.game+"  ");
+             System.out.print("Player B "+B.set+"  "+B.game+"  \n");
              if(B.point==1)
                     System.out.println(15);
              else if(B.point==2)
