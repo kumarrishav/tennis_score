@@ -34,6 +34,11 @@ class ScoreBoard{
        }
        public static void gameCheck(String str){
              for(int i=0;i<str.length();i++){
+
+                if(A.set == 2 || B.set == 2){
+                    System.out.println("Match Won by " +( (A.set > B.set) ? 'A' : 'B'));
+                    return;
+                }
 				char ch=str.charAt(i);
                     if(ch=='A')
                            A.point++;
